@@ -25,8 +25,7 @@ fonctions :
     -updateField : pour mieu organiser le code et eviter la repetition du meme code 
                    puisque c'est le meme pour 6 class elle permet de demander a l'utlisateur
                    une valeur string a enter et elle enregistre cette valeur dans l'address memoire
-                   passer dans le deuxieme argument (passage par refference)
-   
+                   passer dans le deuxieme argument (passage par refference
     -UpdateEmpreint : pour la meme motivation de updateField cette fois elle permet de modifier ou de 
                       supprimer l'empriente
 
