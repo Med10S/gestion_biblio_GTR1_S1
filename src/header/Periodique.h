@@ -42,6 +42,7 @@ Periodique::Periodique(const Periodique &v)
     this->nom_editeur = v.nom_editeur;
     this->date_empreint = v.date_empreint;
     this->type = v.type;
+    this->id = v.id;
 }
 inline void Periodique::operator=(const Periodique &v)
 {
@@ -53,6 +54,7 @@ inline void Periodique::operator=(const Periodique &v)
     this->nom_editeur = v.nom_editeur;
     this->date_empreint = v.date_empreint;
     this->type = v.type;
+    this->id = v.id;
 }
 Periodique::Periodique(string n_nom, string n_date, string n_maison)
     : ouvrage(n_nom, n_date, "null", "null", "null"), maison(n_maison)

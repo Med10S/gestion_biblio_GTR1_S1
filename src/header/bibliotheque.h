@@ -15,10 +15,10 @@ public:
     bibliotheque();
     int ajoute(ouvrage *);
     void afficherObjets();
-    unsigned int size() { return compteur; };
+    unsigned int size() { return id_compteur; };
     // chaque fois un nouveau object est creer le compteur est incrementer
     // decrementer a la suppression
-    virtual void supprimer(int id);
+    void supprimer(int id);
     ~bibliotheque();
     ouvrage &operator[](int index);
 };
@@ -26,12 +26,14 @@ int bibliotheque::id_compteur = 0;
 bibliotheque::bibliotheque() : compteur(0)
 {
 }
-/*la methode supprimer n'est encore au point de fonctionnement*/
+
 void bibliotheque::supprimer(int id)
 {
     for (int i = 0; i < compteur; ++i)
     {
-        if (ouvrages[i]->getId() == id)
+
+        cout << id + 1 << ouvrages[i]->getId() << endl;
+        if (ouvrages[i]->getId() == id + 1)
         {
             // Supprimer l'ouvrage et décaler les éléments suivants
             delete ouvrages[i];
@@ -39,11 +41,10 @@ void bibliotheque::supprimer(int id)
             {
                 ouvrages[j] = ouvrages[j + 1];
             }
-
+            id_compteur = id_compteur - 1;
             return; // Sortir de la boucle si l'ouvrage a été trouvé et supprimé
         }
     }
-    // Si l'ID n'a pas été trouvé, vous pouvez lancer une exception ou simplement ignorer
 }
 bibliotheque::~bibliotheque()
 {
@@ -76,8 +77,9 @@ int bibliotheque::ajoute(ouvrage *objet)
 
 void bibliotheque::afficherObjets()
 {
-    for (int i = 0; i < compteur; ++i)
+    for (int i = 0; i < id_compteur; ++i)
     {
+        cout << "i = " << i << "id_compteur " << id_compteur << endl;
         ouvrages[i]->afficher();
     }
 }

@@ -27,10 +27,9 @@ public:
     virtual string getnom() = 0;
     virtual string get_type() = 0;
     virtual void setId(int) = 0;
-    virtual int getId() { return id; };
-    void supprimer(int);
+    int getId() { return id; };
 
-    ~ouvrage();
+    virtual ~ouvrage() {}
 };
 
 inline ouvrage::ouvrage(string n_nom, string n_date, string n_nom_emprinte, string n_date_empreint, string new_editeur)
@@ -51,13 +50,5 @@ inline ouvrage::ouvrage(string n_nom, string n_nom_editeur, string n_date)
 }
 
 ouvrage::ouvrage(/* args */)
-{
-}
-
-inline void ouvrage::supprimer(int index)
-{
-}
-
-ouvrage::~ouvrage()
 {
 }

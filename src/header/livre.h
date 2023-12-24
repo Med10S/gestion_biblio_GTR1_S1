@@ -1,9 +1,11 @@
 #include <iostream>
 #include <vector>
 #include "fonction_header.h"
-
 using namespace std;
-class livre : virtual public ouvrage
+
+
+
+class livre :  public ouvrage
 {
 protected:
     string auteur;
@@ -11,7 +13,9 @@ protected:
     string maison;
 
 public:
-    livre();
+    livre();//livre l(......);
+    //livre b(l);
+    //livre b=l;
     livre(const livre &);
     void operator=(const livre &);
     livre(string, string, string);
@@ -52,6 +56,7 @@ inline void livre::operator=(const livre &l)
     this->date_empreint = l.date_empreint;
     this->nom_edition = l.nom_edition;
     this->type = l.type;
+    this->id = l.id;
 }
 
 void livre::emprunt(string n_date, string n_nom_empreint)
@@ -77,6 +82,7 @@ inline livre::livre(const livre &l)
     this->date_empreint = l.date_empreint;
     this->nom_edition = l.nom_edition;
     this->type = l.type;
+    this->id = l.id;
 }
 livre::livre(string new_auteur, string n_nom_edition, string n_maison)
 {
@@ -92,7 +98,11 @@ livre::livre(string new_nom,
              string new_nom_edition,
              string new_nom_auteur,
              string new_maisson, string nom_empreinteur, string date_empreinte)
-    : ouvrage(new_nom, new_date, nom_empreinteur, date_empreinte, "null"), auteur(new_nom_auteur), nom_edition(new_nom_edition), maison(new_maisson) { type = "livre"; }
+    : ouvrage(new_nom, new_date, nom_empreinteur, date_empreinte, "null"),
+      auteur(new_nom_auteur), nom_edition(new_nom_edition), maison(new_maisson)
+{
+    type = "livre";
+}
 
 livre::livre(string new_nom,
              string new_date,

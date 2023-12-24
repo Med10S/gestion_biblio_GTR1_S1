@@ -24,7 +24,9 @@ PeriodiqueExterne::PeriodiqueExterne(string n_nom,
                                      string nom_empreinteur,
                                      string date_empreinte,
                                      string new_editeur,
-                                     string new_origine) : Periodique(n_nom, n_date, n_maison, nom_empreinteur, date_empreinte, new_editeur), origine(new_origine)
+                                     string new_origine)
+    : Periodique(n_nom, n_date, n_maison, nom_empreinteur, date_empreinte, new_editeur),
+      origine(new_origine)
 {
     type = "Journal Externe";
     if (nom_empreinteur != "null")
@@ -36,7 +38,8 @@ PeriodiqueExterne::PeriodiqueExterne(string n_nom,
 PeriodiqueExterne::PeriodiqueExterne(string n_nom,
                                      string n_date,
                                      string n_maison,
-                                     string new_origine) : Periodique(n_nom, n_date, n_maison), origine(new_origine)
+                                     string new_origine)
+    : Periodique(n_nom, n_date, n_maison), origine(new_origine)
 {
     type = "Journal Externe";
 }

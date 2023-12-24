@@ -42,6 +42,7 @@ video::video(const video &v)
     this->duree = v.duree;
     this->date_empreint = v.date_empreint;
     this->type = v.type;
+    this->id = v.id;
 }
 video::video(string new_nom,
              string new_anne_apparition,
@@ -56,10 +57,11 @@ video::video(string new_nom,
 video::video(string new_nom,
              string new_anne_apparition,
              string new_auteur,
-             string n_maison, int new_duree, string n_nom_emprinte, string date_empreint, string new_editeur) : ouvrage(new_nom, new_anne_apparition, n_nom_emprinte, date_empreint, new_editeur),
-                                                                                                                auteur(new_auteur),
-                                                                                                                maison(n_maison),
-                                                                                                                duree(new_duree)
+             string n_maison, int new_duree, string n_nom_emprinte, string date_empreint, string new_editeur)
+    : ouvrage(new_nom, new_anne_apparition, n_nom_emprinte, date_empreint, new_editeur),
+      auteur(new_auteur),
+      maison(n_maison),
+      duree(new_duree)
 {
     type = "video";
 }
@@ -81,6 +83,7 @@ inline void video::operator=(const video &v)
     this->nom_editeur = v.nom_editeur;
     this->duree = v.duree;
     this->type = v.type;
+    this->id = v.id;
 
     this->date_empreint = v.date_empreint;
 }

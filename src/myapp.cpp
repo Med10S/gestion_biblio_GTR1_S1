@@ -84,10 +84,11 @@ int main()
 
                 break;
             case 3:
+                cout << " supression de " << choix - 1 << endl;
                 mabib.supprimer(choix - 1);
+                choix2 = 100;
                 cout << "========================" << endl;
                 mabib.afficherObjets();
-                choix2 = 100;
 
                 break;
             default:
